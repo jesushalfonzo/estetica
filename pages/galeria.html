@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+
+  <title>Galeria</title>
+
+  <link href='http://fonts.googleapis.com/css?family=Lekton|Lobster' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="../css/jquery.mb.thumbgallery.min.css?_v=1.3.1"/>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="../js/jquery.mb.thumbGallery.min.js?_v=1.3.1"></script>
+
+
+
+  <style>
+  body, html {
+    position: relative;
+    min-width: 100%;
+    min-height: 100%;*
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #FFFFFF 0%,#CCCCCC 100%);
+    /*background: linear-gradient(135deg, #343b40 0%, #494e51 100%);*/
+    /* font-family: Verdana, Arial, Helvetica, sans-serif;*/
+  }
+
+  #wrapperGallery{
+    padding: 20px;
+    max-width: 1024px;
+    width: 100%;
+    margin: auto;
+  }
+
+
+
+  label{
+    color: white;
+  }
+
+  /*custom overlay gradient */
+
+  .tg-placeHolder{
+    /*background: linear-gradient(135deg, #ffffff 0%, #cccccc 100%);*/
+    background: #000;
+  }
+
+  .tg-overlay {
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.78) 0%, rgba(23, 23, 23, 0.60) 100%);
+  }
+
+
+  /******** DEMO SWITCHER *******/
+  #customize {
+    color: white;
+    text-align: right;
+    position: relative;
+    margin: auto;
+    width: 100%;
+    margin-bottom: 120px;
+  }
+
+  #customize input, #customize select {
+    font-size: 15px;
+    margin: 3px;
+    padding: 4px 4px 4px 8px;
+    border: 1px solid rgba(38, 41, 43, 0.44);
+    color:#fff;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+  }
+
+  #customize select {
+    margin: 0;
+    outline: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    vertical-align: middle;
+  }
+
+  #customize label {
+    font-size: 13px;
+    margin: 3px 0;
+    padding: 3px 10px 3px 0;
+    /*width: 160px;*/
+    display: inline-block;
+    text-align: left;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  .thumbGrid {
+    display: none;
+  }
+
+  @media (max-width: 500px) {
+    h1{
+      /*  font-size: 30px;*/
+    }
+  }
+
+
+  </style>
+</head>
+
+<body>
+
+  <article id="wrapperGallery">
+
+    <section class="content">
+
+      <div id="thumbGrid"
+      class="thumbGrid"
+
+      data-thumbgrid="true"
+      data-nav_effect="slideInverse"
+      data-nav_delay="60"
+      data-nav_timing="1000"
+      data-nav_pagination="6"
+      data-gallery_effectnext="fadeIn"
+      data-gallery_effectprev="fadeOut"
+      data-gallery_fullscreenw="90%"
+      data-gallery_fullscreenh="90%"
+      data-gallery_cover="true">
+
+      <img src="../galeria-images/LR/Gandy1.jpg" data-highres="../galeria-images/HR/Gandy1.jpg" data-caption=""/>
+      <img src="../galeria-images/LR/Gandy2.jpg" data-highres="../galeria-images/HR/Gandy1.jpg" />
+      <img src="../galeria-images/LR/Gandy3.jpg" data-highres="../galeria-images/HR/Gandy3.jpg" data-caption=""/>
+      <img src="../galeria-images/LR/Gandy4.jpg" data-highres="../galeria-images/HR/Gandy4.jpg" data-caption=""/>
+      <img src="../galeria-images/LR/Gandy5.jpg" data-highres="../galeria-images/HR/Gandy5.jpg" data-caption=""/>
+      <img src="../galeria-images/LR/Gandy6.jpg" data-highres="../galeria-images/HR/Gandy6.jpg" data-caption=""/>
+      <img src="../galeria-images/LR/Gandy7.jpg" data-highres="../galeria-images/HR/Gandy7.jpg" data-caption=""/>
+      <img src="../galeria-images/LR/Gandy8.jpg" data-highres="../galeria-images/HR/Gandy8.jpg" data-caption=""/>
+      <img src="../galeria-images/LR/Gandy9.jpg" data-highres="../galeria-images/HR/Gandy9.jpg" data-caption=""/>
+      <img src="../galeria-images/LR/Gandy10.jpg" data-highres="../galeria-images/HR/Gandy10.jpg" data-caption=""/>
+      <img src="../galeria-images/LR/Gandy11.jpg" data-highres="../galeria-images/HR/Gandy11.jpg" data-caption=""/>
+      <img src="../galeria-images/LR/Gandy12.jpg" data-highres="../galeria-images/HR/Gandy12.jpg" data-caption=""/>
+
+    </div>
+
+  </section>
+
+</article>
+
+
+<script>
+
+    //   jQuery(function () {
+
+      var isIframe = function() {
+        var a = !1;
+        try {
+          self.location.href != top.location.href && ( a = !0 )
+        } catch ( b ) {
+          a = !0
+        }
+        return a
+      };
+
+      /* Extend or modify effects */
+      jQuery.thumbGrid.transitions.fadeIn = {in: {x:"0", opacity:0, scale:0.9}, out: {x:0, opacity:0}};
+      jQuery.thumbGrid.transitions.fadeOut = {in: {x:"0", opacity:0}, out: {x:0, scale:0.9, opacity:0}};
+      jQuery.thumbGrid.transitions.slideLeft = {in: {x:$(window).width(), opacity:0}, out: {x:0, opacity:0}};
+      jQuery.thumbGrid.transitions.slideRight = {in: {x:0, opacity:0}, out: {x:$(window).width(), opacity:0}};
+
+      /* Initialize the gallery */
+      jQuery("#thumbGrid").thumbGrid();
+   // setTimeout(function() { $( ".indexEl" ).click();}, 2000);
+   setInterval(function() { $( ".indexEl" ).click();}, 20000);
+   /* customizer */
+   jQuery("#effect").on("change",function(){
+    var x = $(this).val();
+    jQuery("#thumbGrid").data("nav_effect", x);
+  });
+
+   jQuery("#delay").on("change",function(){
+    var x = parseFloat($(this).val());
+    jQuery("#thumbGrid").data("nav_delay", x);
+  });
+
+   jQuery("#timing").on("change",function(){
+    var x = parseFloat($(this).val());
+    jQuery("#thumbGrid").data("nav_timing", x);
+  });
+
+    /*
+     setTimeout(function(){
+     $(".thumbGrid").fadeTo(800,1)
+     },1000)
+*/
+
+    //   });
+
+</script>
+</body>
+</html>
